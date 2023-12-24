@@ -1,17 +1,72 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Component } from "react";
+import ReactDOM from "react-dom/client";
+import {App,Bpp,Cpp,Dpp,Epp,Fpp,Gpp} from "./app";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// function AIndex()
+// {
+//   return(
+//    <>
+//        <App/>
+
+//        <br/>
+       
+//        <Bpp/>
+//    </>
+//   )
+// }
+
+// const aroot = ReactDOM.createRoot(document.getElementById("root"));
+// aroot.render(<AIndex/>);
+
+
+
+// function Watch()
+// {
+//   const element = (
+//     <div>
+//       <h2>Hello, Team</h2>
+//       <h3>It's {new Date().toLocaleTimeString()}</h3>
+//     </div>
+//   )
+
+//   const broot = ReactDOM.createRoot(document.getElementById("root"));
+//   broot.render(element);
+
+// }
+
+// setInterval(Watch,1000);
+
+
+//React conditional rendering
+
+
+function BIndex()
+{
+  return(
+   <>
+     {/* <Cpp/> */}
+     
+     {/* <Dpp/> */}
+
+     {/* <Epp/> */}
+   
+     {/* <Fpp/> */}
+
+     <Gpp/>
+   </>
+  )
+}
+
+const broot = ReactDOM.createRoot(document.getElementById("root"));
+broot.render(<BIndex/>);
+
+
+
+
+
+
+
+
+
+
