@@ -1,567 +1,357 @@
-import PT from "prop-types";
+import react from "react";
 import { Component } from "react";
+import reactDOM from "react-dom/client";
 
-//Composing Components
+// function NotificationMsg(props) {
+//   switch (props.text) {
+//     case "Hi TechWorld":
+//       return "Hi TechWorld, Good Evening!!";
+//     case "Hello TechWorld":
+//       return "Hello TechWorld, Good Morning!!";
+//     default:
+//       return props.text;
+//   }
+// }
 
-function Welcome(props)
+// function NotificationMsg(props) {
+//   switch (props.text) {
+//     case "Hi TechWorld":
+//       return (<>
+//        <p>Hi TechWorld, Good Evening!!</p>
+//        <p>I am fine.</p>
+//       </>);
+//     case "Hello TechWorld":
+//       return (<>
+//        <p>"Hello TechWorld, Good Morning!!";</p>
+//        <Message msg="Well done."/>
+//       </>)
+//     default:
+//       return (<>
+//        <p>props.text;</p>
+//       </>)
+//   }
+// }
+
+// function Message({msg})
+// {
+//   return(<>
+//    <div style={{backgroundColor:'green'}}>
+//     {msg}
+//    </div>
+//   </>)
+// }
+
+// export function App() {
+//   return(<>
+
+//    <NotificationMsg text="Hi TechWorld"/>
+//    <br />
+//    <NotificationMsg text="Hello TechWorld"/>
+//    <br />
+//    <NotificationMsg text="Hey TechWorld"/>
+
+//   </>);
+// }
+
+
+//Below are function (function returing jsx) component
+// const Wishlist = () => {
+//   return (
+//     <>
+//       <button>Wishlist</button>
+//     </>
+//   );
+// };
+
+
+// const Buy = () => {
+//   return (
+//     <>
+//       <button>Buy</button>
+//     </>
+//   );
+// };
+
+
+// const CardList = () => {
+//   return (
+//     <>
+//       <button>CardList</button>
+//     </>
+//   );
+// };
+
+
+// //ENUM
+// const CARD_LIST ={
+//  wishlist:<Wishlist/>,
+//  buy:<Buy/>,
+//  cardlist:<CardList/>
+// };
+
+// //Normal function can;t return JSX
+
+// function CardState({cState})
+// {
+//   return (<>
+   
+//    <div>
+//     {CARD_LIST[cState]}
+//    </div>
+
+//   </>)
+// }
+
+
+
+// export const App = () =>{
+ 
+//   return(<>
+  
+//    <h1>Product</h1>
+//    <CardState cState="wishlist"/>
+//    <br />
+
+//    <CardState cState="buy"/>
+//    <br />
+
+//    <CardState cState="cardlist"/>
+  
+//   </>)
+// }
+
+
+
+// export function App()
+// {
+//   const people = [
+//     {name:"Ajeet"},
+//     {name:"Chandan"},
+//     {name:"Pawan"},
+//     {name:"Samir"},
+//   ];
+
+//   return(<>
+//    {
+//     people.map(val=><p>{val.name}</p>)
+//    }
+//   </>)
+// }
+
+//Key props warning.
+
+// export class App extends Component
+// {
+//   constructor()
+//   {
+//     super();
+//     this.state={
+//       people:[
+//         {id:100,name:"Ajeet"},
+//         {id:101,name:"Chandan"},
+//         {id:102,name:"Pawan"},
+//         {id:103,name:"Samir"},
+//         {id:104,name:"Pawan"},
+//       ]
+//     }
+    
+//   }
+
+//   addMore = () =>{
+//     this.setState({
+//       people:[
+//         {id:100,name:"Ajeet"},
+//         {id:101,name:"Chandan"},
+//         {id:105,name:"Rama"},
+//         {id:102,name:"Pawan"},
+//         {id:103,name:"Samir"},
+//         {id:104,name:"Pawan"},
+//       ]
+//     });
+//   }
+ 
+//   render()
+//   {
+//     return(<>
+//       {
+//       //  this.state.people.map((val,index)=><p key={index}>{val.name}</p>)
+      
+//       // this.state.people.map((val,index)=>
+//       // {
+//       //   return <p key={index}> <span> {val.name} </span> </p>
+//       // }
+//       // )
+      
+//       this.state.people.map((val,index)=>
+//       {
+//         return <p key={val.id}> <span> {val.name} </span> </p>
+//       }
+//       )
+      
+//       }
+   
+//      <button type="button" onClick={this.addMore}>Add More</button>   
+   
+//      </>)
+//   }
+ 
+// }
+
+
+
+
+
+
+
+// export class App extends Component
+// {
+//   constructor()
+//   {
+//     super();
+//     this.state={
+//       people:[
+
+//         {id:100,name:"Ajeet",
+//         courses:[
+//           {name:"REACT JS",type:"Paid"},
+//           {name:"JAVASCRIPT",type:"free"}
+//         ]},
+
+//          {id:101,name:"Chandan",
+//         courses:[
+//           {name:"ANGULAR",type:"Paid"},
+//           {name:"TYPESCRIPT",type:"free"}
+//         ]},
+
+//       ]
+//     }
+    
+//   }
+
+ 
+//   render()
+//   {
+//     return(<>
+      
+//       {
+//         this.state.people.map((val)=>{
+//           return(
+//             <div key={val.id}>
+//               <h2>{val.name}</h2>
+//               <div>
+//                 {
+//                   val.courses.map((c,i)=>{
+//                     return (
+//                       <p key={i}>{c.name} is {c.type}</p>
+//                     )
+//                   })
+//                 }
+//               </div>
+//             </div>
+//           )
+//         })
+//       }
+   
+//      </>)
+//   }
+ 
+// }
+
+
+
+
+// export function App()
+// {
+//   const person = {
+//     name:"Ajeet",
+//     age:29,
+//     mobileNo:7894561230 
+//   }
+
+
+//  return(<>
+ 
+//   <div>
+//     {
+//       Object.keys(person).map((val,indx)=>{
+//         return <p key={indx}>{person[val]}</p>
+//       })
+//     }
+//   </div>
+  
+//  </>)
+
+// }
+
+
+
+// export function App()
+// {
+//   const person = {
+//     name:"Ajeet",
+//     age:29,
+//     mobileNo:7894561230 
+//   }
+
+//  return(<>
+ 
+//   <div>
+//     {
+//       Object.values(person).map((v,i)=>{
+//         return <p key={i}>{v}</p>
+//       })
+//     }
+//   </div>
+//  </>)
+
+// }
+
+
+function ListItem({value})
 {
- return(
-  <>
-   <h1>Hello, {props.name}</h1>
-  </>
- )
+  return (
+    <li>{value}</li>
+  )
 }
+
+function NumberList({numbers})
+{
+  return(
+    
+    //  <ul>
+    //   {
+    //     // where we use map, in parent tage we give key
+    //     numbers.map(n=>{
+    //       return <ListItem key={n} value={n}/>
+    //     })
+    //   }
+    //  </ul>
+
+    //here in shortcut <></> we will not be able to pass key 
+    <ul>
+      {
+        numbers.map(n=>{
+          return(<react.Fragment key={n}>
+              <ListItem value={n}/>
+            </react.Fragment>)
+        })
+      }
+   </ul>
+    
+  )
+}
+
+const nums = [1,2,3,4,5,6,7,8,9,10];
 
 export function App()
-{ 
-  return(<> 
-    <Welcome name="Ajeet"/>
-    <Welcome name="Chandan"/>
-  </>)
-}
-
-
-//Extracting Components
-
-//Generic function for date
-function formatDate(date) {
-    return date.toLocaleDateString()
-}
-
-function Image(props) {
-    return (
-        <img
-            className="Avatar"
-            src={props.author.avatarUrl}
-            alt={props.author.name}
-            width={props.author.width}
-            height={props.author.height}
-        />
-    )
-}
-
-function UserInfo(props) {
-    return (
-        <div className="UserInfo">
-
-            <Image author={props.author} />
-
-            <div className="UserInfo-name">
-                {props.author.name}
-            </div>
-
-        </div>
-    )
-}
-function Comment(props) {
-    return (
-        <div className="Comment">
-
-            <UserInfo author={props.author} />
-
-            <div className="Comment-text">{props.text}</div>
-            
-            <div className="Comment-date">
-                {formatDate(props.date)}
-            </div>
-
-        </div>
-    )
-}
-const obj = {
-    date: new Date(),
-    text: 'Enjoying learning React!!',
-    author: {
-        name: 'Hello,',
-        //avatarUrl: 'https://www.sahosoft.com/img/team/1.jpg',
-        avatarUrl:'tom-and-jerry.jpg',
-        width:'200px',
-        height:'200px'
-
-    },
-};
-
-export function Bpp() {
-    return (
-        <Comment
-            date={obj.date}
-            text={obj.text}
-            author={obj.author}
-        />
-    )
-}
-
-
-// function UserGreeting()
-// {
-//   return(<>
-//    <h1>Welcome Back!!</h1>
-//   </>)
-// }
-
-// function GuestGreeting()
-// {
-//   return(<>
-//    <h1>Please Sign Up!!</h1>
-//   </>)
-// }
-
-
-// function Greeting(props)
-// {
-//   const {isLoggedIn} = props;
-//   if(isLoggedIn)
-//   {
-//     return <UserGreeting/>
-//   }
-//   else
-//   {
-//     return <GuestGreeting/> 
-//   }
-// }
-
-
-// export function Cpp()
-// {
-//   return(
-//     // <Greeting isLoggedIn/>
-//     <Greeting isLoggedIn={false}/>
-//   )
-// }
-
-
-
-// class Login extends Component
-// {
-//   constructor()
-//   {
-//     super();
-//     this.state={
-//       isLoggedIn:false 
-//     }
-//   }
-
-//   handleLogin=()=>{
-//     this.setState({
-//       isLoggedIn:true
-//     })
-//   }
-
-//   handleLogout=()=>{
-//     this.setState({
-//       isLoggedIn:false 
-//     })
-//   }
-
-//   render()
-//   {
-//     const {isLoggedIn} = this.state;
-//     console.log(this.state);
-//     if(isLoggedIn)
-//       {
-//          return(<>
-//           <div>
-        
-//           <AGreeting isLoggedIn={isLoggedIn}/>
-       
-//           <LogoutButton clickHandle={this.handleLogout}/>
-//           </div>
-//          </>)
-//       }
-//     else
-//     {
-//       return(<>
-//         <div>
-      
-//         <AGreeting isLoggedIn={isLoggedIn}/>
-    
-//         <LoginButton clickHandle={this.handleLogin}/>
-//         </div>
-//        </>)
-//     }
-
-// }
-
-// }
-
-
-
-// function LoginButton(props)
-// {
-//   return(<>
-    
-//     <button type="button" onClick={props.clickHandle}>Login</button>
-
-//   </>)
-// }
-
-// function LogoutButton(props)
-// {
-//   return(<>
-    
-//     <button type="button" onClick={props.clickHandle}>Logout</button>
-
-//   </>)
-// }
-
-
-
-// function AUserGreeting()
-// {
-//   return(<>
-//    <h1>Welcome Back!!</h1>
-//   </>)
-// }
-
-// function AGuestGreeting()
-// {
-//   return(<>
-//    <h1>Please Sign Up!!</h1>
-//   </>)
-// }
-
-
-// function AGreeting(props)
-// {
-//   const {isLoggedIn} = props;
-//   if(isLoggedIn)
-//   {
-//     return <AUserGreeting/>
-//   }
-//   else
-//   {
-//     return <AGuestGreeting/> 
-//   }
-// }
-
-
-
-//reducing return statement using element variable.
-
-// class Login extends Component
-// {
-//   constructor()
-//   {
-//     super();
-//     this.state={
-//       isLoggedIn:false 
-//     }
-//   }
-
-//   handleLogin=()=>{
-//     this.setState({
-//       isLoggedIn:true
-//     })
-//   }
-
-//   handleLogout=()=>{
-//     this.setState({
-//       isLoggedIn:false 
-//     })
-//   }
-
-//   render()
-//   {
-//     const {isLoggedIn} = this.state;
-//     console.log(this.state);
-//     let btn;
-//     if(isLoggedIn)
-//       {
-//          btn=(<>
-//           <div>
-        
-//           <AGreeting isLoggedIn={isLoggedIn}/>
-       
-//           <LogoutButton clickHandle={this.handleLogout}/>
-//           </div>
-//          </>)
-//       }
-//     else
-//     {
-//       btn=(<>
-//         <div>
-      
-//         <AGreeting isLoggedIn={isLoggedIn}/>
-    
-//         <LoginButton clickHandle={this.handleLogin}/>
-//         </div>
-//        </>)
-//     }
-//  return btn;
-// }
-
-// }
-
-
-
-// function LoginButton(props)
-// {
-//   return(<>
-    
-//     <button type="button" onClick={props.clickHandle}>Login</button>
-
-//   </>)
-// }
-
-// function LogoutButton(props)
-// {
-//   return(<>
-    
-//     <button type="button" onClick={props.clickHandle}>Logout</button>
-
-//   </>)
-// }
-
-
-
-// function AUserGreeting()
-// {
-//   return(<>
-//    <h1>Welcome Back!!</h1>
-//   </>)
-// }
-
-// function AGuestGreeting()
-// {
-//   return(<>
-//    <h1>Please Sign Up!!</h1>
-//   </>)
-// }
-
-
-// function AGreeting(props)
-// {
-//   const {isLoggedIn} = props;
-//   let ctrl;
-//   if(isLoggedIn)
-//   {
-//     ctrl=<AUserGreeting/>
-//   }
-//   else
-//   {
-//     ctrl=<AGuestGreeting/> 
-//   }
-//   return ctrl;
-// }
-
-
-//ternanry operator
-
-// class Login extends Component
-// {
-//   constructor()
-//   {
-//     super();
-//     this.state={
-//       isLoggedIn:false 
-//     }
-//   }
-
-//   handleLogin=()=>{
-//     this.setState({
-//       isLoggedIn:true
-//     })
-//   }
-
-//   handleLogout=()=>{
-//     this.setState({
-//       isLoggedIn:false 
-//     })
-//   }
-
-//   render()
-//   {
-//     const {isLoggedIn} = this.state;
-//     console.log(this.state);
-//     let btn;
-//     isLoggedIn ?
-//          btn=(<>
-//           <div>
-        
-//           <AGreeting isLoggedIn={isLoggedIn}/>
-       
-//           <LogoutButton clickHandle={this.handleLogout}/>
-//           </div>
-//          </>)
-//       :
-//       btn=(<>
-//         <div>
-      
-//         <AGreeting isLoggedIn={isLoggedIn}/>
-    
-//         <LoginButton clickHandle={this.handleLogin}/>
-//         </div>
-//        </>)
-    
-//  return btn;
-// }
-
-// }
-
-
-
-// function LoginButton(props)
-// {
-//   return(<>
-    
-//     <button type="button" onClick={props.clickHandle}>Login</button>
-
-//   </>)
-// }
-
-// function LogoutButton(props)
-// {
-//   return(<>
-    
-//     <button type="button" onClick={props.clickHandle}>Logout</button>
-
-//   </>)
-// }
-
-
-
-// function AUserGreeting()
-// {
-//   return(<>
-//    <h1>Welcome Back!!</h1>
-//   </>)
-// }
-
-// function AGuestGreeting()
-// {
-//   return(<>
-//    <h1>Please Sign Up!!</h1>
-//   </>)
-// }
-
-
-// function AGreeting(props)
-// {
-//   const {isLoggedIn} = props;
-//   let ctrl;
-//   isLoggedIn ?
-//     ctrl=<AUserGreeting/>
-//   :
-//     ctrl=<AGuestGreeting/> 
-//   return ctrl;
-// }
-
-
-// export function Dpp()
-// {
-//   return(
-//     <Login/>
-//   )
-// }
-
-
-
-// export function Epp()
-// {
-//   return(<>
-   
-//    {(10>8) && <h1>Hello Vijay!!</h1>}
-
-//    {(10>7 && (1==1)) && <> <h1>Hello Ajeet!!</h1> <p>I am fine</p></>}
-  
-//    {(10>8) && alert("123")}
-
-//   </>)
-// }
-
-
-function MailBox(props)
-{
-  const {unreadMsg}=props;
-  return(<>
-    <h1>My Mail Box</h1>
-    
-    {/* <h2>You have {unreadMsg.length} unread message </h2> */}
-
-   {unreadMsg.length>0 && <h2>You have {unreadMsg.length} unread message </h2> }
-
-  </>)
-}
-
-// const message = ["Mail1","Mail2"];
-// const message=[];
-const message = ["Mail1","Mail2"];
-export function Fpp()
 {
   return(<>
    
-   <MailBox unreadMsg={message}/>
+   <NumberList numbers={nums}/>
 
   </>)
 }
 
 
-// function Warning(props)
-// {
-//   if(!props.warn)
-//   {
-//     return null;
-//   }
-
-//   return(<>
-//    <h1>This is your last warning</h1>
-//   </>)
-// }
-
-// export function Gpp()
-// {
-//   return(<>
-//    {/* <Warning warn/> */}
-   
-//    <Warning warn={false}/>
-
-//   </>)
-// }
 
 
-function Warning(props)
-{
-  if(!props.warn)
-  {
-    return null;
-  }
-
-  return(<>
-   <h1>This is your last warning</h1>
-  </>)
-}
-
-export class Gpp extends Component
-{
-  constructor()
-  {
-    super();
-    this.state = {
-      showWarn:false
-    }
-
-  }
-
-  handleToggleWarn = () => {
-
-    this.setState((state)=>
-    (  //() because not using return 
-      {
-       showWarn:!this.state.showWarn
-      }
-    )
-    
-    )
-  
-  }
-
-  render()
-  {
-    return(<>
-      <Warning warn={this.state.showWarn}/>
-
-      <button type="button" onClick={this.handleToggleWarn}>{this.state.showWarn ? 'Hide':'Show'}</button>
-    </>)
-  }
-
-}
